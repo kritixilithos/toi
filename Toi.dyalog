@@ -73,5 +73,5 @@
 		⍬ prog (r,⊂⍬)
 	}
 
-	output←{args≡'j':⎕json⍵⋄args≡'d':display⍵⊣'display'⎕cy'dfns'⋄''}toi⊃⎕NGET code
+	output←{args≡'j':⎕json⍵⋄args≡'d':display⍵⊣'display'⎕cy'dfns'⋄⍬}toi⊃⎕NGET code
 ∇
