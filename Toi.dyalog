@@ -56,8 +56,8 @@
 		c≡'{':∪{res←⍵prog R⋄~⍣n⊢(,0)≢⍴res:⍵prog S⋄⍵}¨⍺⊣t n R S←in
 		⍝recursion to make ⍣ not run cond with (f⍵)
 		c≡'[':{(⍵prog S)s in}⍣(~⍣n⊢(,0)≢⍴⍺prog R)⊢⍺⊣t n R S←in
-		c∊'.:':⍺⊣⍞←c
-		c≡'n':⍺⊣⍞←⎕ucs 10
+		c∊'.:':⍺⊣⎕←c ⍝was ⍞←c
+		c≡'n':⍺⊣⎕←'' ⍝was ⍞←⎕ucs 10
 		c≡'u':,⊂⍺
 		c≡'d':⍺⊣⎕←d ⍺
 		c≡'a':⍺∪⊃∪/⍺
