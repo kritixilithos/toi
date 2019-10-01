@@ -1,7 +1,9 @@
 ∇ output←input(args Toi)code;k;E;ps;pl;pm;pt;p;s;prog;toi
 	⍝https://esolangs.org/wiki/Toi
+	'display'⎕cy'dfns'
 	k←{⍺⍵}
 	E←{⍞←'Error: ',⍵⋄→}
+	d←{⍺≡'j':⎕json⍵⋄⍺≡'d':display⍵⋄⍬}
 
 	⍝parse_set
 	ps←{
@@ -59,7 +61,7 @@
 		c∊'.:':⍺⊣⎕←c ⍝was ⍞←c
 		c≡'n':⍺⊣⎕←'' ⍝was ⍞←⎕ucs 10
 		c≡'u':,⊂⍺
-		c≡'d':⍺⊣⎕←d ⍺
+		c≡'d':⍺⊣⎕←{args≡'':'d'd⍵⋄args d⍵}⍺
 		c≡'a':⍺∪⊃∪/⍺
 		c≡'r':⊃∪/⍺
 		⍺
@@ -73,5 +75,5 @@
 		⍬ prog (r,⊂⍬)
 	}
 
-	output←{args≡'j':⎕json⍵⋄args≡'d':display⍵⊣'display'⎕cy'dfns'⋄⍬}toi⊃⎕NGET code
+	output←args d toi⊃⎕NGET code
 ∇
